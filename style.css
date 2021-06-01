@@ -1,0 +1,198 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+header #logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    height: 100px;
+    margin: 10px 0;
+}
+
+header #logo .topo {
+    padding: 5px;
+    width: 5%;
+    height: 2px;
+    background-color: burlywood;
+    border-radius: 2px;
+    margin: 2px 0;
+}
+
+header #logo .cor1 {
+    padding: 5px;
+    width: 40%;
+    height: 3px;
+    background-color: lightsalmon;
+    border-radius: 2px;
+    margin: 2px 0;
+}
+
+header #logo .cor2 {
+    padding: 5px;
+    width: 52%;
+    height: 3px;
+    background-color: lightblue;
+    border-radius: 2px;
+    margin: 2px 0;
+}
+
+header #logo .cor3 {
+    padding: 5px;
+    width: 64%;
+    height: 3px;
+    background-color: pink;
+    border-radius: 2px;
+    margin: 2px 0;
+}
+
+header #logo .cor4 {
+    padding: 5px;
+    width: 76%;
+    height: 3px;
+    background-color: lightgreen;
+    border-radius: 2px;
+    margin: 2px 0;
+}
+
+header #logo .base {
+    padding: 5px;
+    width: 86%;
+    height: 2px;
+    background-color: burlywood;
+    border-radius: 2px;
+    margin: 2px 0;
+}
+
+header h1 {
+    display: flex;
+    text-align: end;
+    align-self: center;
+    color: rgb(6, 88, 116);
+    font-size: 30px;
+    padding-left: 10px;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+/* MAIN */
+
+#container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+#container hr {
+    border: 1px solid burlywood;
+    width: 80vw;
+}
+
+#container h2 {
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 18px;
+    margin-block-end: 0;
+}
+
+#container .saudacao {
+    margin-bottom: 8px;
+}
+
+#container p {
+    font-family: 'Nunito';
+    font-weight: 200;
+    font-size: 14px;
+    text-align: center;
+}
+
+#container ul {
+    padding-inline-start: 20px;
+}
+#container li {
+    font-family: 'Nunito';
+    font-weight: 200;
+    font-size: 14px;
+    text-align: justify;
+    list-style: circle;
+}
+
+#container #divPilhas {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin-block-start: 10px;
+}
+
+#container #divPilhas .pilha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+    padding: 3px;
+    margin: 10px;
+    width: 5px;
+    height: 120px;
+    cursor: pointer;
+} 
+
+#container .inicial {
+    display: flex;
+    flex-direction: column;
+}
+
+#container .inicial .disco {
+    display: flex;
+    justify-content: flex-end;
+    padding: 4px;
+    height: 10px;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+#container .inicial .um {
+    background-color: lightsalmon;
+    min-width: 40px;
+    max-width: 40px;
+}
+
+#container .inicial .dois {
+    background-color: lightblue;
+    min-width: 50px;
+    max-width: 50px;
+}
+
+#container .inicial .tres {
+    background-color: pink;
+    min-width: 60px;
+    max-width: 60px;
+}
+
+#container .inicial .quatro {
+    background-color: lightgreen;
+    min-width: 70px;
+    max-width: 70px;
+}
+
+#bottom {
+    display: flex;
+    margin-top: -20px;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+    padding: 3px;
+    width: 90vw;
+    height: 5px;
+}
