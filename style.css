@@ -162,25 +162,25 @@ header h1 {
     border-radius: 3px;
 }
 
-#container .inicial .um {
+#container #inicial .um {
     background-color: lightsalmon;
     min-width: 40px;
     max-width: 40px;
 }
 
-#container .inicial .dois {
+#container #inicial .dois {
     background-color: lightblue;
     min-width: 50px;
     max-width: 50px;
 }
 
-#container .inicial .tres {
+#container #inicial .tres {
     background-color: pink;
     min-width: 60px;
     max-width: 60px;
 }
 
-#container .inicial .quatro {
+#container #inicial .quatro {
     background-color: lightgreen;
     min-width: 70px;
     max-width: 70px;
