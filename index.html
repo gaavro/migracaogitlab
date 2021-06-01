@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;900&display=swap" rel="stylesheet">
     <title>Torre de Hanoi</title>
 </head>
@@ -24,24 +25,30 @@
     </header>
     <main id="container">
         <hr>
-        <h2 class="objetivo">Objetivo:</h2>
+        <div id="info">
+            <h2 class="objetivo"><i class="fas fa-bullseye"> </i> Objetivo:</h2>
         <p>Você ganhará o jogo quando colocar todos os discos na torre final na mesma
         ordem disposta na torre inicial.
         </p>
-        <h2 class="regras">Regras:</h2>
+        <h2 class="regras"><i class="fas fa-exclamation-circle"></i> Regras:</h2>
         <ul>
             <li>Movimentar uma só peça (disco) de cada vez.</li>
             <li>Uma peça maior não pode ficar acima de uma menor.</li>
             <li>Não é permitido movimentar uma peça que esteja abaixo de outra.</li>
         </ul>
         <h2 class="saudacao">Boa sorte!</h2>
+        </div>
 
         <hr>
 
-        <div id="divPilhas"></div>
+        <div id="divPilhas">
+        </div>
 
         <hr id="bottom">
     </main>
+    <footer>
+        
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
