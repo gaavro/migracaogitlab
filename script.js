@@ -1,6 +1,20 @@
-//Local de destino
+//Local de destino 
+const pilhaInicial = document.getElementById("inicial");
+ const pilhaMeio = document.getElementById("meio");
+ const pilhaFinal = document.getElementById("final");
+ const main = document.getElementById('divPilhas')
 
-const main = document.getElementById('divPilhas')
+// Torres
+const torreInicial = document.createElement('div');
+torreInicial.classList.add("torre");
+pilhaInicial.appendChild(torreInicial);
+const torreMeio = document.createElement('div');
+torreMeio.classList.add("torre");
+pilhaMeio.appendChild(torreMeio);
+const torreFinal = document.createElement('div');
+torreFinal.classList.add("torre");
+pilhaFinal.appendChild(torreFinal);
+
 
 //Pilhas
 
@@ -20,23 +34,53 @@ main.appendChild(final)
 
 const disco1 = document.createElement('div')
 disco1.classList.add('disco','um')
-inicio.appendChild(disco1)
+pilhaInicial.appendChild(disco1)
 
 const disco2 = document.createElement('div')
 disco2.classList.add('disco','dois')
-inicio.appendChild(disco2)
+pilhaInicial.appendChild(disco2)
 
 const disco3 = document.createElement('div')
 disco3.classList.add('disco','tres')
-inicio.appendChild(disco3)
+pilhaInicial.appendChild(disco3)
 
 const disco4 = document.createElement('div')
 disco4.classList.add('disco','quatro')
-inicio.appendChild(disco4)
+pilhaInicial.appendChild(disco4)
 
 
 
 //FUNÇÕES E EVENTOS
 
+let atual= ""
 
 
+const jogar= function (event) {
+const escolhido= event.currentTarget;
+const ultimo= event.currentTarget.lastElementChild;
+console.log(ultimo)
+console.log(escolhido)
+
+if(ultimo.clientWidth===atual.clientWidth){
+    atual= ""
+}else if (atual==="" && ultimo.classList.value !=='torre'){
+atual= ultimo;
+}else{
+
+    if(ultimo.classList.value==="torre" && atual !== ""){
+        escolhido.appendChild(atual)
+        atual="";
+        
+    }else if(escolhido.childElementCount >= 1 && ultimo.clientWidth > atual.clientWidth){
+        escolhido.appendChild(atual);
+        atual=""
+    }
+}
+
+
+
+}
+
+pilhaInicial.addEventListener('click', jogar)
+pilhaMeio.addEventListener('click', jogar)
+pilhaFinal.addEventListener('click', jogar)
