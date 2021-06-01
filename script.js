@@ -40,7 +40,6 @@ const game = function (event) {
     } else {
         if (selecionado.classList.value === "torre" && atual !== "") {
             escolhido.appendChild(atual);
-            atual.classList.remove("flutua")
             atual = "";
            
         } else if (escolhido.childElementCount >= 1 && selecionado.clientWidth > atual.clientWidth) {
