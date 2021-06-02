@@ -3,15 +3,12 @@ body {
     width: 95vw;
     margin: 0 auto;
 }
-
 /* HEADER */
-
 header {
     display: flex;
     margin: 0 auto;
     padding: 15px;
 }
-
 header #logo {
     display: flex;
     flex-direction: column;
@@ -80,7 +77,6 @@ header h1 {
     width: fit-content;
 }
 /* MAIN */
-
 #container {
     display: flex;
     flex-direction: column;
@@ -209,7 +205,6 @@ header h1 {
 #container .quatro:active {
     background-color: rgb(197, 255, 197);
 }
-
 #bottom {
     display: flex;
     margin-top: -20px;
