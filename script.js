@@ -25,31 +25,33 @@ const disco4 = document.createElement('div');
 disco4.classList.add("disco", "quatro");
 pilhaInicial.appendChild(disco4);
 
-
-
-
+console.log(pilhaInicial.childElementCount)
 
 let atual = "";
 
-const game = function (event) {
+const jogar = function (event) {
     const escolhido = event.currentTarget;
     const selecionado = event.currentTarget.lastElementChild;
     if (atual === "" && selecionado.classList.value !== "torre") {
         atual = selecionado;
-       
     } else {
         if (selecionado.classList.value === "torre" && atual !== "") {
             escolhido.appendChild(atual);
             atual = "";
-           
         } else if (escolhido.childElementCount >= 1 && selecionado.clientWidth > atual.clientWidth) {
             escolhido.appendChild(atual);
             atual = "";
-          
+        }
+        if (selecionado.clientWidth < atual.clientWidth) {
+            alert("Ops! Movimento inválido :(")
+            atual = "";
+        }
+        if (pilhaMeio.childElementCount === 5 || pilhaFinal.childElementCount === 5) {
+            alert("Muito bom! Você venceu :D")
         }
     }
-    
 }
-pilhaInicial.addEventListener('click', game);
-pilhaMeio.addEventListener('click', game);
-pilhaFinal.addEventListener('click', game);
+
+pilhaInicial.addEventListener('click', jogar);
+pilhaMeio.addEventListener('click', jogar);
+pilhaFinal.addEventListener('click', jogar);
