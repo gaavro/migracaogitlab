@@ -1,87 +1,61 @@
-//Local de destino
+//DESTINOS
 
-const main = document.getElementById('divPilhas')
+const pilhaInicial = document.getElementById("inicial");
+const pilhaMeio = document.getElementById("meio");
+const pilhaFinal = document.getElementById("final");
+const torreInicial = document.createElement('div');
 
-//Pilhas
+//TORRES
 
-const pilhaInicio = document.createElement('div')
-pilhaInicio.classList.add('pilha','inicial')
-main.appendChild(pilhaInicio)
+torreInicial.classList.add("torre");
+pilhaInicial.appendChild(torreInicial);
+const torreMeio = document.createElement('div');
+torreMeio.classList.add("torre");
+pilhaMeio.appendChild(torreMeio);
+const torreFinal = document.createElement('div');
+torreFinal.classList.add("torre");
+pilhaFinal.appendChild(torreFinal);
 
-const pilhaMeio = document.createElement('div')
-pilhaMeio.classList.add('pilha','meio')
-main.appendChild(pilhaMeio)
+//DISCOS 
 
-const pilhaFinal = document.createElement('div')
-pilhaFinal.classList.add('pilha','final')
-main.appendChild(pilhaFinal)
+const disco1 = document.createElement('div');
+disco1.classList.add("disco", "um");
+pilhaInicial.appendChild(disco1);
+const disco2 = document.createElement('div');
+disco2.classList.add("disco", "dois");
+pilhaInicial.appendChild(disco2);
+const disco3 = document.createElement('div');
+disco3.classList.add("disco", "tres");
+pilhaInicial.appendChild(disco3);
+const disco4 = document.createElement('div');
+disco4.classList.add("disco", "quatro");
+pilhaInicial.appendChild(disco4);
 
-const pilhas = document.querySelectorAll(".pilha")
+let atual = "";
 
-//console.log(pilhas)
-
-//Discos
-
-const disco1 = document.createElement('div')
-disco1.classList.add('disco','um')
-pilhaInicio.appendChild(disco1)
-
-const disco2 = document.createElement('div')
-disco2.classList.add('disco','dois')
-pilhaInicio.appendChild(disco2)
-
-const disco3 = document.createElement('div')
-disco3.classList.add('disco','tres')
-pilhaInicio.appendChild(disco3)
-
-const disco4 = document.createElement('div')
-disco4.classList.add('disco','quatro')
-pilhaInicio.appendChild(disco4)
-
-//FUNÇÕES E EVENTOS
-
-
-//Você precisa fazer o jogador clicar duas vezes para cada movimento:
-//primeiro para selecionar a torre de origem, e depois para selecionar a torre de destino.
-//Use uma variável para registrar qual modo o jogador está.
-
-let pilhaAtual = 0
-
-const game = (evt) => {
-let elementoAtual = evt.currentTarget.lastElementChild
-    if(elementoAtual.className.includes("disco")){
-    pilhaAtual = elementoAtual
+const jogar = function (event) {
+    const escolhido = event.currentTarget;
+    const selecionado = event.currentTarget.lastElementChild;
+    if (atual === "" && selecionado.classList.value !== "torre") {
+        atual = selecionado;
+    } else {
+        if (selecionado.classList.value === "torre" && atual !== "") {
+            escolhido.appendChild(atual);
+            atual = "";
+        } else if (escolhido.childElementCount >= 1 && selecionado.clientWidth > atual.clientWidth) {
+            escolhido.appendChild(atual);
+            atual = "";
+        }
+        if (selecionado.clientWidth < atual.clientWidth) {
+            alert("Ops! Movimento inválido :(")
+            atual = "";
+        }
+        if (pilhaMeio.childElementCount === 5 || pilhaFinal.childElementCount === 5) {
+            alert("Muito bom! Você venceu :D")
+        }
     }
-    if(elementoAtual.className.includes("pilha") && pilhaAtual!==0){
-        elementoAtual.appendChild(pilhaAtual)
-        pilhaAtual=0
-    }
-    console.log("elementoAtual:",elementoAtual)
-    console.log("pilhaAtual:", pilhaAtual)
-}
-for(let i=0; i < pilhas.length; i++){
-pilhas[i].addEventListener("click", game)
 }
 
-
-//Adicione um handler de clique em cada uma das três torres. 
-//Use event.currentTarget dentro do handler de evento para determinar qual torre foi clicada.
-
-
-
-//Use a propriedade DOM childElementCount para saber quantos discos estão em uma torre.
-
-
-
-//Use a propriedade DOM lastElementChild para saber qual é o disco no topo da torre.
-
-
-
-//Use o método DOM appendChild() para adicionar um disco a uma torre 
-//(você já usou este método várias vezes em tarefas anteriores). 
-//Observe que quando você usa appendChild em um elemento que já tem um pai, 
-//ele é automaticamente removido do pai anterior e adicionado no novo.
-
-
-
-//Use a propriedade Element.clientWidth para pegar o tamanho dos discos.
+pilhaInicial.addEventListener('click', jogar);
+pilhaMeio.addEventListener('click', jogar);
+pilhaFinal.addEventListener('click', jogar);
