@@ -6,7 +6,6 @@ const pilhaFinal = document.getElementById("final");
 
 //TORRES
 
-const torreInicial = document.createElement('div');
 torreInicial.classList.add("torre");
 pilhaInicial.appendChild(torreInicial);
 const torreMeio = document.createElement('div');
