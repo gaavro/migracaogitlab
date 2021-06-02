@@ -1,6 +1,10 @@
+//DESTINOS
+
 const pilhaInicial = document.getElementById("inicial");
 const pilhaMeio = document.getElementById("meio");
 const pilhaFinal = document.getElementById("final");
+
+//TORRES
 
 const torreInicial = document.createElement('div');
 torreInicial.classList.add("torre");
@@ -11,6 +15,8 @@ pilhaMeio.appendChild(torreMeio);
 const torreFinal = document.createElement('div');
 torreFinal.classList.add("torre");
 pilhaFinal.appendChild(torreFinal);
+
+//DISCOS 
 
 const disco1 = document.createElement('div');
 disco1.classList.add("disco", "um");
@@ -24,8 +30,6 @@ pilhaInicial.appendChild(disco3);
 const disco4 = document.createElement('div');
 disco4.classList.add("disco", "quatro");
 pilhaInicial.appendChild(disco4);
-
-console.log(pilhaInicial.childElementCount)
 
 let atual = "";
 
