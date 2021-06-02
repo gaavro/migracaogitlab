@@ -3,6 +3,7 @@
 const pilhaInicial = document.getElementById("inicial");
 const pilhaMeio = document.getElementById("meio");
 const pilhaFinal = document.getElementById("final");
+const torreInicial = document.createElement('div');
 
 //TORRES
 
